@@ -11,6 +11,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -19,6 +20,9 @@ import java.util.List;
 
 @Service
 public class DataParseService {
+
+    @Autowired
+    DataIngestionService dataIngestionService;
 
     public void startDataParsingFromHtmlToJavaPojo() throws IOException {
         List<String> carURLList = new ArrayList<>();
@@ -54,17 +58,15 @@ public class DataParseService {
                 }
             }
             pageCount++;
-            System.out.println("page no :" + pageCount + "  carURList" + carURLList.size());
+//            System.out.println("page no :" + pageCount + "  carURList" + carURLList.size());
         }
-        System.out.println("carURList" + carURLList.size());
+//        System.out.println("carURList" + carURLList.size());
 
-        List<CarDto> carDtoList = new ArrayList<>();
         for (String carURL : carURLList)
         {
             CarDto carDto = getCarDtoForURL(carURL);
-            carDtoList.add(carDto);
+            dataIngestionService.transformAndIngestInDB(carDto);
         }
-        System.out.println(carDtoList.size());
     }
 
     private CarDto getCarDtoForURL(String url) throws IOException {
@@ -314,7 +316,6 @@ public class DataParseService {
             TyresDto tyresDto = new TyresDto();
             for(Element element: suspensionBrakesSteeringTyresElement)
             {
-                System.out.println(element);
                 String key = element.select("span").get(0).text();
                 String value = element.select("span").get(1).text();
                 if(key.equals("Front Suspension"))
@@ -362,9 +363,10 @@ public class DataParseService {
             specificationDto.setBrackeDto(brackeDto);
             specificationDto.setSteeringDto(steeringDto);
             specificationDto.setTyresDto(tyresDto);
-
             carDto.setSpecificationDto(specificationDto);
-            System.out.println(carDto);
+
+            carDto.setWebLink(url);
+//            System.out.println(carDto);
         }
         catch(Exception exception)
         {

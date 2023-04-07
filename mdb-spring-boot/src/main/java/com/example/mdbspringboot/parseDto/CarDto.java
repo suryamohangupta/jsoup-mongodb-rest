@@ -22,5 +22,6 @@ public class CarDto {
     String make;
     String model;
     String variant;
+    String webLink;
 
 }
