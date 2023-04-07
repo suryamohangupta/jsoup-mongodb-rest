@@ -23,7 +23,7 @@ public class MdbSpringBootApplication implements CommandLineRunner{
 	}
 	
 	public void run(String... args) throws IOException {
-		dataParseService.startDataParsingFromHtmlToJavaPojo();
+		//dataParseService.startDataParsingFromHtmlToJavaPojo();
 	}
 }
 
