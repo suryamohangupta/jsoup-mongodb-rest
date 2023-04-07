@@ -1,8 +1,8 @@
-package com.example.mdbspringboot.DTO;
+package com.example.mdbspringboot.parseDto;
 
-import com.example.mdbspringboot.DTO.feature.FeatureDto;
-import com.example.mdbspringboot.DTO.images.CarImagesDto;
-import com.example.mdbspringboot.DTO.specification.SpecificationDto;
+import com.example.mdbspringboot.parseDto.feature.FeatureDto;
+import com.example.mdbspringboot.parseDto.images.CarImagesDto;
+import com.example.mdbspringboot.parseDto.specification.SpecificationDto;
 import lombok.Data;
 
 import java.util.List;

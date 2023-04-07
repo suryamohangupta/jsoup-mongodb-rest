@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.example.mdbspringboot.model.GroceryItem;
+import com.example.mdbspringboot.dbEntity.GroceryItem;
 
 public interface ItemRepository extends MongoRepository<GroceryItem,String>{
 	

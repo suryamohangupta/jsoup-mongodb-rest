@@ -1,4 +1,4 @@
-package com.example.mdbspringboot.DTO.specification;
+package com.example.mdbspringboot.parseDto.specification;
 
 import lombok.Data;
 

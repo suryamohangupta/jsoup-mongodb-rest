@@ -1,4 +1,4 @@
-package com.example.mdbspringboot.DTO.feature;
+package com.example.mdbspringboot.parseDto.feature;
 
 
 public enum FeatureName {

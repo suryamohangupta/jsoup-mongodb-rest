@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 
-import com.example.mdbspringboot.model.GroceryItem;
+import com.example.mdbspringboot.dbEntity.GroceryItem;
 import com.mongodb.client.result.UpdateResult;
 
 @Component

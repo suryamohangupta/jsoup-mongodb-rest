@@ -2,16 +2,15 @@ package com.example.mdbspringboot;
 
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.mdbspringboot.DTO.*;
-import com.example.mdbspringboot.DTO.feature.FeatureDto;
-import com.example.mdbspringboot.DTO.feature.FeatureName;
-import com.example.mdbspringboot.DTO.images.CarImageDto;
-import com.example.mdbspringboot.DTO.images.CarImagesDto;
-import com.example.mdbspringboot.DTO.specification.*;
+import com.example.mdbspringboot.parseDto.*;
+import com.example.mdbspringboot.parseDto.feature.FeatureDto;
+import com.example.mdbspringboot.parseDto.feature.FeatureName;
+import com.example.mdbspringboot.parseDto.images.CarImageDto;
+import com.example.mdbspringboot.parseDto.images.CarImagesDto;
+import com.example.mdbspringboot.parseDto.specification.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -22,7 +21,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.example.mdbspringboot.model.GroceryItem;
+import com.example.mdbspringboot.dbEntity.GroceryItem;
 import com.example.mdbspringboot.repository.CustomItemRepository;
 import com.example.mdbspringboot.repository.ItemRepository;
 
