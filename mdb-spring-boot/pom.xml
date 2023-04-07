@@ -12,7 +12,7 @@
 	<artifactId>mdb-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mdb-spring-boot</name>
-	<description>Spring boot mongodb</description>
+	<description>mdb-spring-boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
